@@ -8,6 +8,7 @@ import { CityInFlames } from './scenes/CityInFlames';
 import { WarRoom } from './scenes/WarRoom';
 import { GlobalResponse } from './scenes/GlobalResponse';
 import { UncertainFuture } from './scenes/UncertainFuture';
+import { LeadersInterview } from './scenes/LeadersInterview';
 
 const SCENE_DURATIONS = {
   breaking: 8000,
@@ -16,6 +17,7 @@ const SCENE_DURATIONS = {
   military: 9000,
   city: 10000,
   warroom: 9000,
+  leaders: 12000,
   response: 8000,
   future: 9000,
 };
@@ -37,10 +39,10 @@ export default function VideoTemplate() {
       <motion.div 
         className="absolute w-[80vw] h-[80vw] rounded-full blur-[100px] pointer-events-none z-[0] mix-blend-screen opacity-20"
         animate={{
-          x: currentScene === 0 ? '-20vw' : currentScene === 3 ? '50vw' : currentScene === 5 ? '-10vw' : '10vw',
-          y: currentScene === 1 ? '50vh' : currentScene === 4 ? '-20vh' : '20vh',
-          backgroundColor: currentScene === 4 ? '#FF6B00' : '#CC2200',
-          scale: currentScene === 7 ? 0.2 : 1
+          x: currentScene === 0 ? '-20vw' : currentScene === 3 ? '50vw' : currentScene === 5 ? '-10vw' : currentScene === 6 ? '0vw' : '10vw',
+          y: currentScene === 1 ? '50vh' : currentScene === 4 ? '-20vh' : currentScene === 6 ? '0vh' : '20vh',
+          backgroundColor: currentScene === 4 ? '#FF6B00' : currentScene === 6 ? '#3B82F6' : '#CC2200',
+          scale: currentScene === 8 ? 0.2 : 1
         }}
         transition={{ duration: 3, ease: "easeInOut" }}
       />
@@ -52,8 +54,9 @@ export default function VideoTemplate() {
         {currentScene === 3 && <MilitaryAssets key="military" />}
         {currentScene === 4 && <CityInFlames key="city" />}
         {currentScene === 5 && <WarRoom key="warroom" />}
-        {currentScene === 6 && <GlobalResponse key="response" />}
-        {currentScene === 7 && <UncertainFuture key="future" />}
+        {currentScene === 6 && <LeadersInterview key="leaders" />}
+        {currentScene === 7 && <GlobalResponse key="response" />}
+        {currentScene === 8 && <UncertainFuture key="future" />}
       </AnimatePresence>
 
       {/* Persistent Ticker */}
@@ -66,7 +69,7 @@ export default function VideoTemplate() {
           animate={{ x: [0, -2000] }}
           transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
         >
-          // GLOBAL MOBILIZATION REACHES 85% // NUCLEAR LAUNCH DETECTED — 8 MISSILES INBOUND // ICBM TRACK CONFIRMED OVER ARCTIC // MISSILE DEFENSE SYSTEMS OVERWHELMED // DEFCON 1 DECLARED ALL NATO NATIONS // EVACUATION ORDERS ISSUED 47 CITIES // CYBER ATTACKS KNOCK OUT MAJOR POWER GRIDS IN EU AND US // UN SECURITY COUNCIL MEETING EVACUATED // MARTIAL LAW DECLARED IN 14 NATIONS // STRATEGIC RESERVE ACTIVATED // MARKETS HALTED INDEFINITELY // BORDER CROSSINGS SEALED // COMMUNICATION LINES DISRUPTED ACROSS PACIFIC // DEFENSE READINESS CONDITION CRITICAL //
+          // GLOBAL MOBILIZATION REACHES 85% // NUCLEAR LAUNCH DETECTED — 8 MISSILES INBOUND // ICBM TRACK CONFIRMED OVER ARCTIC // MISSILE DEFENSE SYSTEMS OVERWHELMED // DEFCON 1 DECLARED ALL NATO NATIONS // EVACUATION ORDERS ISSUED 47 CITIES // CYBER ATTACKS KNOCK OUT MAJOR POWER GRIDS IN EU AND US // UN SECURITY COUNCIL MEETING EVACUATED // MARTIAL LAW DECLARED IN 14 NATIONS // STRATEGIC RESERVE ACTIVATED // MARKETS HALTED INDEFINITELY // BORDER CROSSINGS SEALED // COMMUNICATION LINES DISRUPTED ACROSS PACIFIC // WORLD LEADERS HOLD EMERGENCY SUMMIT // PRESIDENTS AND PMs ADDRESS THEIR NATIONS LIVE // EMERGENCY PARLIAMENT SESSIONS CALLED IN 22 COUNTRIES // DEFENSE READINESS CONDITION CRITICAL //
         </motion.div>
       </div>
     </div>
