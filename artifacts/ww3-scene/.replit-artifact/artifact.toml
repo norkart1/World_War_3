@@ -1,0 +1,31 @@
+kind = "video"
+previewPath = "/"
+title = "World War 3 Scene"
+version = "1.0.0"
+id = "artifacts/ww3-scene"
+router = "path"
+
+[[integratedSkills]]
+name = "video-js"
+version = "1.0.0"
+
+[[services]]
+localPort = 24871
+name = "web"
+paths = ["/"]
+
+[services.development]
+run = "pnpm --filter @workspace/ww3-scene run dev"
+
+[services.env]
+PORT = "24871"
+BASE_PATH = "/"
+
+[services.production]
+build = ["pnpm", "--filter", "@workspace/ww3-scene", "run", "build"]
+publicDir = "artifacts/ww3-scene/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
