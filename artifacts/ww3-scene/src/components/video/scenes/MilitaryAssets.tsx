@@ -120,7 +120,7 @@ export const MilitaryAssets = () => {
         >
           {/* Mock image integration point */}
           <div className="absolute inset-0 bg-bg-dark/50 z-0" />
-          <img src="/missile_trails.png" className="absolute w-full h-full object-cover opacity-60 mix-blend-screen" alt="Missiles" />
+          <video src="/missiles.mp4" autoPlay loop muted playsInline className="absolute w-full h-full object-cover opacity-50 mix-blend-screen" />
           
           {/* Radar Sweep */}
           <motion.div 

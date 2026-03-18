@@ -29,7 +29,7 @@ export const CityInFlames = () => {
         animate={{ scale: 1.1 }}
         transition={{ duration: 10, ease: "linear" }}
       >
-        <img src="/burning_city.png" className="w-full h-full object-cover mix-blend-screen" alt="Burning City" />
+        <video src="/burning_city.mp4" autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover mix-blend-screen opacity-80" />
         <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-bg-dark/50 to-bg-dark" />
       </motion.div>
 

@@ -11,6 +11,7 @@ export const BreakingNews = () => {
       exit={{ scale: 1.5, opacity: 0, filter: 'blur(20px)' }}
       transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
     >
+      <video src="/explosion.mp4" autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-10 mix-blend-screen z-0" />
       {/* Alert border */}
       <motion.div 
         className="absolute inset-[2vw] border-[0.5vw] border-primary/50 z-0"
